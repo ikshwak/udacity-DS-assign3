@@ -15,10 +15,9 @@ def get_min_max(ints):
        return tuple(None,None)
 
     if len(ints) == 1:
-        return tuple(ints[0], ints[0])
+        return tuple((ints[0], ints[0]))
 
     mmVal = minmax()
-
     if ints[0] >= ints[1]:
         mmVal.max = ints[0]
         mmVal.min = ints[1]
@@ -26,8 +25,15 @@ def get_min_max(ints):
         mmVal.min = ints[0]
         mmVal.max = ints[1]
 
-    for intVal in ints:
-        if intVal <= mmVal
+    index = 2
+    while index < len(ints):
+        if ints[index] <= mmVal.min:
+            mmVal.min = ints[index]
+        if ints[index] >= mmVal.max:
+            mmVal.max = ints[index]
+        index += 1
+
+    return tuple((mmVal.min,mmVal.max))
 
 ## Example Test Case of Ten Integers
 import random

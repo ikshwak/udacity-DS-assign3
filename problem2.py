@@ -7,17 +7,35 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
-    start = 0
-    end = len(input_list) - 1
-    mid = (start + end)/2
-    while input_list[mid] != number:
+    if input_list == None or number == None:
+        return -1
+    return rotated_array_search_helper(input_list,0,len(input_list)-1,number)
 
-        
+
+def rotated_array_search_helper(input_list,l,h,number):
+    if l > h:
+        print("rotated search: " + str(number) +" not in the list")
+        return -1
+
+    mid = (l+h)//2
+    if input_list[mid] == number:
+        return mid
+
+    if input_list[l] <= input_list[mid]:
+        if number >= input_list[l] and number <= input_list[mid]:
+            return rotated_array_search_helper(input_list,l,mid-1,number)
+        return rotated_array_search_helper(input_list,mid+1,h,number)
+
+    if number >= input_list[mid] and number <= input_list[h]:
+        return rotated_array_search_helper(input_list,mid+1,h,number)
+    return rotated_array_search_helper(input_list,l,mid-1,number)
+    
 
 def linear_search(input_list, number):
     for index, element in enumerate(input_list):
         if element == number:
             return index
+    print("Linear search: " + str(number) +" not in the list")
     return -1
 
 def test_function(test_case):
@@ -33,3 +51,6 @@ test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_function([[], -1])
+test_function([[6, 7, 8, 1, 2, 3, 4], -1])
+test_function([[6, 7, 8, 1, 2, 3, 4], None])
