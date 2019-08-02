@@ -30,14 +30,57 @@ def sort_012(input_list):
 
 def test_function(test_case):
     sorted_array = sort_012(test_case)
-    print(sorted_array)
-    if sorted_array == sorted(test_case):
-        print("Pass")
-    else:
-        print("Fail")
+    print("Solution: " + str(sorted_array))
+    print("Library sort: " + str(sorted(test_case)))
 
+
+"""
+TEST CASE 1
+"""
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
+"""
+Result:
+Solution: [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
+Library sort: [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
+"""
+
+"""
+TEST CASE 2
+"""
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
+"""
+Result:
+Solution: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Library sort: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+"""
+
+"""
+TEST CASE 3
+"""
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+"""
+Result:
+Solution: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+Library sort: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+"""
+
+"""
+TEST CASE 4
+"""
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 3])
+"""
+Result:
+invalid 012 list
+Solution: []
+Library sort: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 4]
+"""
+
+"""
+TEST CASE 5
+"""
 test_function([])
+"""
+Result:
+Solution: []
+Library sort: []
+"""

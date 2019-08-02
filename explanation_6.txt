@@ -1,0 +1,9 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+get_min_max():
+
+- This function iterates through the list only once and updates the object of a class ("minmax") that maintains the max and min values.
+- time complexity: O(n) - only one iteration.
+- space complexity: O(1)

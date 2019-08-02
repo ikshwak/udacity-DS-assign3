@@ -1,0 +1,10 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+rotated_array_search():
+
+- this function uses not extra space.
+- this funcion uses the D and C technique to find the number in a rotated array.
+- time complexity - O(log n)
+- space complexity - O(1)

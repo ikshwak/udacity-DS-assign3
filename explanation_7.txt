@@ -1,0 +1,19 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+RouteTrieNode class:
+
+- This class define the node to the trie.
+	- __init__(): defines a dictionary to maintain the list of children.
+	- insert(): adds a new child to node if a character in the string does not exist. there is a handler associated at the end of each valid path.
+	
+RouteTrie class:
+- This class defines the tree of nodes forming words passed by the user.
+	- __init__(): creates the root node with a root handler and no handler strings.
+	- insert(): inserts the passed words with each node representing a RouteTrieNode.
+	- find(): This function finds the handler of the passed path.
+
+- time complexity - insert = m * O(log n) - m is the word length and n is the number of nodes in the trie.
+					search suffix = O(m)  - m is the word length.
+- space complexity - O(n)

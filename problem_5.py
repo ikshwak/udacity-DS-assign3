@@ -53,6 +53,8 @@ class Trie:
             return None
         node = self.root
         for char in prefix:
+            if node == None:
+                return node
             if char in node.children:
                 node=node.children[char]
             else:
@@ -64,7 +66,6 @@ class Trie:
         if node == None:
             print("empty trie")
             return ''
-
         def printTrie(node, word):
             if node == None:
                 return
@@ -73,10 +74,8 @@ class Trie:
                 if node.children[child].is_word == True:
                     print(word+child)
                 printTrie(node.children[child], word+child)
-
         word = ''
         printTrie(node, word)
-
         return ''
 
 
@@ -101,12 +100,92 @@ def f(prefix):
     else:
         print('')
 
+"""
+TEST CASE 1
+"""
 f('s')
+"""
+Result:
+ample
+"""
+
+"""
+TEST CASE 2
+"""
 f('a')
+"""
+Result:
+nt
+nthology
+ntagonist
+ntonym
+"""
+
+"""
+TEST CASE 3
+"""
 f('d')
+"""
+Result:
+d not found
+"""
+
+"""
+TEST CASE 4
+"""
 f('fu')
+"""
+Result:
+n
+nction
+"""
+
+"""
+TEST CASE 5
+"""
 f('ant')
+"""
+Result:
+hology
+agonist
+onym
+"""
+
+"""
+TEST CASE 6
+"""
 f('tr')
+"""
+Result:
+ie
+igger
+igonometry
+ipod
+"""
+
+"""
+TEST CASE 7
+"""
 f('m')
+"""
+Result:
+y
+"""
+
+"""
+TEST CASE 8
+"""
 f('')
+"""
+Result:
+
+"""
+
+"""
+TEST CASE 9
+"""
 f('ye')
+"""
+Result:
+ye not found
+"""

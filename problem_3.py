@@ -10,8 +10,7 @@ def rearrange_digits(input_list):
     if input_list == None:
         return [0,0]
     input_list = mergesort(input_list)
-    print(input_list)
-
+    
     if len(input_list)%2 == 0:
         return rearrange_digits_even(input_list)
 
@@ -21,7 +20,6 @@ def rearrange_digits(input_list):
 def rearrange_digits_even(input_list):
     firstNum = 0
     secondNum = 0
-    print("rearrange_digits_even")
     index = 0
 
     while index < len(input_list)-1:
@@ -37,8 +35,6 @@ def rearrange_digits_even(input_list):
 def rearrange_digits_odd(input_list):
     firstNum = 0
     secondNum = 0
-    print("rearrange_digits_odd")
-    
     index = 0
 
     while index < len(input_list)-2:
@@ -103,32 +99,62 @@ def merge(left, right):
         
     return merged
 
+"""
+Logic:
+    1. sort the array in O(nlogn) time in descending order
+    2. if the array has odd number of element add index 0 elements to a list
+    3. followed by alternate elements from index 1 to same list
+    4. followed by alternate elements from index 2 to another list
+    5. create both the numbers from the 2 lists and reverse them --> the sum of these digits is the max
+    6. if array has even number of elements add even indexed elements to a list
+    7. followed by odd indexed elements to another list
+    8. create both number from the 2 lists and reverse them --> the sum of these digits is the max
+"""
+
 def test_function(test_case):
     output = rearrange_digits(test_case[0])
     solution = test_case[1]
-    if sum(output) == sum(solution):
-        print("Pass")
-    else:
-        print("Fail")
-
-test_function([[1, 2, 3, 4, 5], [542, 31]])
-test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
-test_function(test_case)
+    sumOutput = sum(output)
+    print("Max sum from solution " + str(sumOutput))
+    sumSolution = sum(solution)
+    print("Max sum from test case " + str(sumSolution))
 
 """
-2,4,5,6,8,9
+TEST CASE 1
+"""
+test_function([[1, 2, 3, 4, 5], [542, 31]])
+"""
+Result:
+Max sum from solution 573
+Max sum from test case 573
+"""
 
-1,2,3,4,5,6,7,8,9
+"""
+TEST CASE 2
+"""
+test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
+"""
+Result:
+Max sum from solution 1816
+Max sum from test case 1816
+"""
 
-98642 + 7531
+"""
+TEST CASE 3
+"""
+test_function([[4], [4]])
+"""
+Result:
+Max sum from solution 4
+Max sum from test case 4
+"""
 
-Logic:
-
-    1. sort the array in O(nlogn) time in descending order
-    2. if the array has odd number of element add index 0,1 elements to a list
-    3. followed by alternate elements from index 3 to another list
-    3.5 create a number from the list and reverse it or create a number from the rear end of the list
-    4. if array has even number of elements add even indexed elements to a list
-    5. followed by odd indexed elements to another list
-    5.5 create a number from the list and reverse it or create a number from the rear end of the list
+"""
+TEST CASE 4
+"""
+test_function([[], [0,0]])
+"""
+Result:
+Max sum from solution 0
+Max sum from test case 0
 """

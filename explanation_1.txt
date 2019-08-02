@@ -1,0 +1,10 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+sqrt():
+
+- this function uses not extra space.
+- this funcion uses the D and C technique to find the square root of a number.
+- time complexity - O(log n)
+- space complexity - O(1)

@@ -41,16 +41,95 @@ def linear_search(input_list, number):
 def test_function(test_case):
     input_list = test_case[0]
     number = test_case[1]
-    if linear_search(input_list, number) == rotated_array_search(input_list, number):
-        print("Pass")
-    else:
-        print("Fail")
+    linearIdx = linear_search(input_list, number)
+    print("Linear search index " + str(linearIdx))
+    rotatedIdx = rotated_array_search(input_list, number)
+    print("Rotated search index " + str(rotatedIdx))
 
+
+"""
+TEST CASE 1
+"""
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
+"""
+Result:
+Linear search index 0
+Roated search index 0
+"""
+
+"""
+TEST CASE 2
+"""
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
+"""
+Result:
+Linear search index 5
+Roated search index 5
+"""
+
+"""
+TEST CASE 3
+"""
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
+"""
+Result:
+Linear search index 2
+Roated search index 2
+"""
+
+"""
+TEST CASE 4
+"""
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
+"""
+Result:
+Linear search index 3
+Roated search index 3
+"""
+
+"""
+TEST CASE 5
+"""
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+"""
+Result:
+Linear search: 10 not in the list
+Linear search index -1
+rotated search: 10 not in the list
+Roated search index -1
+"""
+
+"""
+TEST CASE 6
+"""
 test_function([[], -1])
+"""
+Result:
+Linear search: -1 not in the list
+Linear search index -1
+rotated search: -1 not in the list
+Roated search index -1
+"""
+
+"""
+TEST CASE 7
+"""
 test_function([[6, 7, 8, 1, 2, 3, 4], -1])
+"""
+Result:
+Linear search: -1 not in the list
+Linear search index -1
+rotated search: -1 not in the list
+Roated search index -1
+"""
+
+"""
+TEST CASE 8
+"""
 test_function([[6, 7, 8, 1, 2, 3, 4], None])
+"""
+Result:
+Linear search: None not in the list
+Linear search index -1
+Roated search index -1
+"""

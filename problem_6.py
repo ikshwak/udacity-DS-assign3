@@ -12,7 +12,7 @@ def get_min_max(ints):
        ints(list): list of integers containing one or more integers
     """
     if ints == None or len(ints) == 0:
-       return tuple(None,None)
+       return None
 
     if len(ints) == 1:
         return tuple((ints[0], ints[0]))
@@ -37,8 +37,55 @@ def get_min_max(ints):
 
 ## Example Test Case of Ten Integers
 import random
-
+"""
+TEST CASE 1
+"""
 l = [i for i in range(0, 10)]  # a list containing 0 - 9
 random.shuffle(l)
-
 print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
+"""
+Result:
+Pass
+"""
+
+"""
+TEST CASE 2
+"""
+l = [i for i in range(10, 10000)]  # a list containing 10 - 9999
+random.shuffle(l)
+print ("Pass" if ((10, 9999) == get_min_max(l)) else "Fail")
+"""
+Result:
+Pass
+"""
+
+"""
+TEST CASE 3
+"""
+l = [i for i in range(-10, 10000)]  # a list containing -10 - 9999
+random.shuffle(l)
+print ("Pass" if ((-10, 9999) == get_min_max(l)) else "Fail")
+"""
+Result:
+Pass
+"""
+
+"""
+TEST CASE 4
+"""
+l = [1,1,1,1,1,1,1,1,1,1,1,1]  # a list containing 1 - 1
+print ("Pass" if ((1,1) == get_min_max(l)) else "Fail")
+"""
+Result:
+Pass
+"""
+
+"""
+TEST CASE 5
+"""
+l = []  # a list containing None
+print ("Pass" if (None == get_min_max(l)) else "Fail")
+"""
+Result:
+Pass
+"""

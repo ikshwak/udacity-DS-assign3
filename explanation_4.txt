@@ -1,0 +1,9 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+sort_012():
+
+- this function iterates through the loop and swaps the element depending on whether it is a 0,1 or 2.
+- time complexity - O(n).
+- space complexity - O(1)

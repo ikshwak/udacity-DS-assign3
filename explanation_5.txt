@@ -1,0 +1,22 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+trieNode class:
+
+- This class define the node to the trie.
+	- __init__(): defines a dictionary to maintain the list of children.
+	- insert(): adds a new child to node if a character in the string does not exist.
+	- suffixes(): This is the core function of this problem, it goes the nodes of each character in the
+				  string passed and creates a list of all possible strings stored in the trie.
+
+trie class:
+- This class defines the tree of nodes forming words passed by the user.
+	- __init__(): creates the root node.
+	- insert(): inserts the passed words with each node representing a trieNode.
+	- find(): This function finds the child node of the passed prefix.
+			  this node is used as the root to the suffixes function to get the suffix list.
+
+- time complexity - insert = m * O(log n)  - m is the word length and n is the number of nodes in the trie.
+					search suffix = n * O(m) - m is the suffix length and n is the number of children in the suffix root node.
+- space complexity - O(n)

@@ -1,0 +1,18 @@
+#######################################################################################
+				SOLUTION AND TIME/SPACE COMPLEXITY
+#######################################################################################
+
+rearrange_digits():
+
+Logic:
+    1. sort the array in O(nlogn) time in descending order
+    2. if the array has odd number of element add index 0 elements to a list
+    3. followed by alternate elements from index 1 to same list
+    4. followed by alternate elements from index 2 to another list
+    5. create both the numbers from the 2 lists and reverse them --> the sum of these digits is the max
+    6. if array has even number of elements add even indexed elements to a list
+    7. followed by odd indexed elements to another list
+    8. create both number from the 2 lists and reverse them --> the sum of these digits is the max
+
+- time complexity - O(nlog n) as sorting is the most time taking operation.
+- space complexity - O(1)
